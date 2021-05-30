@@ -54,7 +54,8 @@ def Label(filename,coord):
             draw.arc(((x-scale,y-scale),(x+scale,y+scale)), 0,360, fill=255)    #画空心圆
             
             draw.text((x,y),str(i+1),fill=255)  #坐标，字符，颜色
-            
+        if not os.path.exists(draw_path):
+            os.makedirs(draw_path)  
         img.save(draw_path+'my'+imgid+'.jpg')
         
 if __name__ == '__main__':
